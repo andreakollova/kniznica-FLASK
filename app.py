@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://uwpbrzasi4dzqlld8ekl:B7ADHjpsKnVUWKu71i9aBDA7oOlyEY@bbqhgph7wb0iza3ajqzn-postgresql.services.clever-cloud.com:50013/bbqhgph7wb0iza3ajqzn'
+app.config['SQLALCHEMY_DATABASE_URI'] = '<your_uri>'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
