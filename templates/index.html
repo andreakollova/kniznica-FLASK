@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Domov · Knižnica{% endblock %}
+
+{% block content %}
+ <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"><svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>Light<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
+        <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"><svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>Dark<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
+        <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"><svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>Auto<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
+      </ul>
+    </div>
+
+      <div id="myCarousel" class="carousel slide w-100 mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+             <img src="{{ url_for('static', filename='ban2.png') }}" class="d-block w-100" alt="Banner 1">
+            <div class="container-fluid">
+              <div class="carousel-caption text-start">
+                <h1>Vitajte v našej knižnici</h1>
+                <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='ban4.jpg') }}" class="d-block w-100" alt="Banner 1">
+            <div class="container-fluid">
+              <div class="carousel-caption">
+                <h1>Vitajte v našej knižnici</h1>
+                <p>Some representative placeholder content for the second slide of the carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='ban2.png') }}" class="d-block w-100" alt="Banner 1">
+            <div class="container-fluid">
+              <div class="carousel-caption text-end">
+                <h1>Vitajte v našej knižnici</h1>
+                <p>Some representative placeholder content for the third slide of this carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container-fluid marketing">
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="{{ url_for('static', filename='jk.png') }}" class="rounded-circle img-fluid mb-3" width="140" height="140" alt="Portrét JK">
+            <h2 class="fw-normal">Autori</h2>
+            <p>Prezrite si zoznam populárnych autorov, ich životopisy a dostupné knihy.</p>
+            <p><a class="btn btn-secondary" href="/authors-table">Zobraziť autorov &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img src="{{ url_for('static', filename='bk2.jpg') }}" class="rounded-circle img-fluid mb-3" width="140" height="140" alt="Portrét JK">
+            <h2 class="fw-normal">Knihy</h2>
+            <p>Vyberte si z kníh dostupných v našej digitálnej i fyzickej knižnici.</p>
+            <p><a class="btn btn-secondary" href="books-table">Zobraziť knihy &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img src="{{ url_for('static', filename='genres.jpg') }}" class="rounded-circle img-fluid mb-3" width="140" height="140" alt="Portrét JK">
+            <h2 class="fw-normal">Žánre</h2>
+            <p>Objavujte knihy podľa žánrov: romány, sci-fi, história, detektívky a ďalšie.</p>
+            <p><a class="btn btn-secondary" href="genres-table">Zobraziť žánre &raquo;</a></p>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Objavte svet kníh <span class="text-body-secondary">v našej online knižnici</span></h2>
+            <p class="lead">Naša knižnica vám prináša stovky titulov na pár klikov – od klasickej literatúry až po moderné bestsellery. Čítajte kdekoľvek a kedykoľvek, bez obmedzení. Vďaka digitálnemu systému si knihy jednoducho požičiate online a začítate sa priamo zo svojho zariadenia.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="{{ url_for('static', filename='book1.jpg') }}" class="featurette-image img-fluid mx-auto" width="500" height="500" alt="Čítanie kníh online">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Áno, je to také dobré. <span class="text-body-secondary"Presvedčte sa sami.</span></h2>
+            <p class="lead">Naša platforma je navrhnutá tak, aby ste sa mohli sústrediť iba na čítanie. Intuitívne rozhranie, prehľadné vyhľadávanie a možnosť uložiť si svoje obľúbené knihy na neskôr robí z našej knižnice ideálne miesto pre každého čitateľa. Čítanie ešte nikdy nebolo také pohodlné.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img src="{{ url_for('static', filename='book.jpg') }}" class="featurette-image img-fluid mx-auto" width="500" height="500" alt="Čítanie kníh online">
+          </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+      </div>
+{% endblock %}
